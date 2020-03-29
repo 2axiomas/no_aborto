@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/local/Cellar/node/8.2.1/bin/node /usr/local/Cellar/yarn/0.27.5_1/libexec/bin/yarn.js add bootstrap
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  8.2.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "jekyll-instagram-portfolio-theme",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Theme front-end assets",
+    "scripts": {
+      "css:clean": "rm -rf ./web-dist/css && mkdir ./web-dist/css",
+      "css:sass": "node-sass --include-path ./_web-src/scss --source-map ./web-dist/css --output-style compressed ./_web-src/scss/main.scss ./web-dist/css/main.min.css",
+      "css:build": "npm run css:clean && npm run css:sass",
+      "css:watch": "nodemon --ext scss --watch ./_web-src/scss --exec 'npm run css:build'",
+      "watch": "npm run css:watch",
+      "build": "npm run css:build"
+    },
+    "author": "Sergey Sokurenko",
+    "license": "(c) Copyright 2016 Sergey Sokurenko",
+    "devDependencies": {
+      "node-sass": "^3.7.0",
+      "nodemon": "^1.9.2",
+      "uglify-js": "^2.6.2"
+    },
+    "dependencies": {
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/nodemon: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/0.27.5_1/libexec/lib/yarn-cli.js:114906:19)
+      at ontimeout (timers.js:469:11)
+      at tryOnTimeout (timers.js:304:5)
+      at Timer.listOnTimeout (timers.js:264:5)
